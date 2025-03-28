@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don&rsquo;t Lose Your Beyond Perks!</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #edeff6, #ae95da);
+      margin: 0;
+      padding: 0;
+      color: #333;
+      padding-bottom: 0px; /* Give space at the bottom to avoid footer overlap */
+    }
+
+    header {
+      background-image: url('https://beyondslim.com/wp-content/uploads/2021/04/luke-chesser-hQo6Uyo4nBg-unsplash-scaled-1.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      border-bottom: 5px solid #ffd100;
+    }
+
+    /* Apply a semi-transparent dark overlay on the header to improve readability */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(45, 11, 69, 0.3); /* 30% opacity with the base color #2d0b45 */
+      z-index: -1;
+    }
+
+    /* Styling for Circle Logo */
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px; /* Space below the logo */
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px; /* Add space below header */
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      color: #ffd100;
+      font-weight: 500;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .content {
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-top: 40px; /* Add space before the content */
+    }
+
+    h2 {
+      color: #522d6d;
+      font-size: 2rem;
+      margin-top: 0;
+      text-align: center;
+      margin-bottom: 20px; /* Space between title and next section */
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px; /* Add space between paragraphs */
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #ffd100;
+      color: #2d0b45;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      text-transform: uppercase;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      margin-bottom: 40px; /* Space below the button */
+    }
+
+    .cta-button:hover {
+      background-color: #ae95da;
+      color: white;
+    }
+
+    /* Features Section - Two rows */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    /* Product List Section - Two products in a single row (after removing ZipBurn®️) */
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two columns now */
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .feature, .product {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px; /* Space between products/features */
+    }
+
+    .feature:hover, .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature h3, .product h3 {
+      color: #2d0b45;
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 10px; /* Space below the feature/product title */
+    }
+
+    .feature p, .product p {
+      font-size: 1.1rem;
+      color: #522d6d;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product .details {
+      flex: 1;
+    }
+
+    .product img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-left: 20px;
+    }
+
+    .note {
+      font-style: italic;
+      color: #777;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 40px; /* Add space below the note */
+    }
+
+    .footer {
+      background-color: #2d0b45;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative; /* Changed from fixed to relative */
+      width: 100%;
+      margin-top: 0px; /* Add space above the footer */
+    }
+
+    /* Chatbox Styles */
+    .chatbox {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+
+    .chatbox-header {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2d0b45;
+      margin-bottom: 10px;
+    }
+
+    .chatbox-messages {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+
+    .chatbox-message {
+      background-color: #e6e6e6;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    /* New Exciting Section for "Pause your S&S" */
+    .pause-section {
+    position: relative; /* Make sure the section is positioned */
+    background-image: url('https://beyondslim.com/wp-content/uploads/2023/11/getty-images-ADJYLLKza4Q-unsplash-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+    background: rgba(45, 11, 69, 0.50);
+    color: white;
+    padding: 40px 50px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Add the semi-transparent overlay */
+.pause-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(45, 11, 69, 0.3); /* 30% opacity with #2d0b45 */
+    z-index: -1; /* Ensure it stays behind the text */
+}
+
+    .pause-section h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0px;
+    }
+
+    .pause-section p {
+      font-size: 1.2rem;
+      color: #ffd100;
+      margin-bottom: 20px;
+    }
+
+    .pause-section .cta-button {
+      background-color: #ffd100;
+      color: #2d0b45;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      text-transform: uppercase;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .pause-section .cta-button:hover {
+      background-color: #ae95da;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Circle Logo -->
+    <img src="https://beyondslim.com/images/emails/BeyondSlim-Icon-White.png" alt="Logo" class="logo">
+    <h1>Don&rsquo;t Lose Your Beyond Perks!</h1>
+    <p class="subheading">You can pause your S&S or switch to a lower price S&S product! Your Preferred Customer Program benefits are too valuable to lose! <br> <a href="#options" style="color: #ffd100; text-decoration: none;">Click here to see your options!</a></p>
+  </header>
+
+  <div class="content">
+    <h2>Don’t Cancel—Stay Preferred!</h2>
+    <p>Keep any product on Subscribe & Save (S&S) and keep enjoying:</p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>🛍️ Increasing Discounts</h3>
+        <p>Save up to $25 per bag of ZipSlim®️ by month 5 with Loyal Subscriber Savings.</p>
+      </div>
+      <div class="feature">
+        <h3>🍽️ Exclusive Meal Plans</h3>
+        <p>Receive customized monthly meal plans tailored to your dietary needs.</p>
+      </div>
+      <div class="feature">
+        <h3>🌱 Private Wellness Community</h3>
+        <p>Join our community led by a Celebrity Health Coach and naturopathic doctor.</p>
+      </div>
+      <div class="feature">
+        <h3>🛒 Early Access & Exclusive Discounts</h3>
+        <p>Get sneak previews of new products, flavors, and exclusive apparel.</p>
+      </div>
+    </div>
+
+    <h2>Featured Products on S&S:</h2>
+
+    <div class="product-list">
+      <div class="product">
+        <div class="details">
+          <h3>ZipBoom®️</h3>
+          <p>Metal Wellness, Mood & Energy</p>
+          <p><strong>S&S Price:</strong> $69.99</p>
+        </div>
+        <img src="https://beyondslim.com/wp-content/uploads/2023/11/hi_res-16-JLA_r1_770A6404-scaled.jpg" alt="ZipBoom">
+      </div>
+      <div class="product">
+        <div class="details">
+          <h3>RS90®️</h3>
+          <p>Skin Rejuvenation</p>
+          <p><strong>S&S Price:</strong> $44.99</p>
+        </div>
+        <img src="https://beyondslim.com/wp-content/uploads/2023/08/web-d2-jla_r1_03E_0465-e1693431857276.jpg" alt="RS90">
+      </div>
+    </div>
+
+    <p class="note">💡 Tip: Pause or downgrade your subscription instead of canceling to keep your Preferred Customer benefits! Don’t miss out on the perks that keep you healthy and happy.</p>
+    </div>
+
+    <!-- Exciting Section for Pausing S&S -->
+    <div class="pause-section">
+      <h3>Still Thinking of Pausing Your S&S?</h3>
+      <p>Don’t let go of your perks just yet! You can pause your subscription, keep all your benefits, and come back whenever you're ready. Why lose out on discounts, exclusive access, and the amazing community?</p>
+      <a href="mailto:Support@beyondslim.com?subject=Pause my S&S" class="cta-button">Pause Your S&S Now!</a>
+    </div>
+
+  
+
+  <div class="footer">
+    <p>Stay connected and enjoy the perks that make a difference!</p>
+  </div>
+
+</body>
+</html>
